@@ -1,5 +1,5 @@
-FROM alpine:3.3
-MAINTAINER Steve Hibit <sdhibit@gmail.com>
+FROM alpine:3.5
+MAINTAINER Michal <nemrod@reaper.pl>
 
 # Add Testing Repository
 RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
