@@ -7,7 +7,6 @@ services:
       args:
         - VER
         - BUILD
-        - CONTROL
     container_name: emby
     image: nemd/docker-emby:${VER}.${BUILD}-${CONTROL}
     ports:
