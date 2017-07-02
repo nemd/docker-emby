@@ -4,8 +4,11 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile
+      args:
+        - VER=3.2
+        - BUILD=20.0
     container_name: emby-tst
-    image: nemd/docker-emby:00
+    image: nemd/docker-emby:${TAG}
     ports:
       - "8096:8096/tcp"
       - "8920:8920/tcp"
@@ -14,9 +17,9 @@ services:
     volumes:
       # - /srv/dockstorage/emby/conf:/config
       # - /srv/storage/media:/media
-      - emby-config:/config
+      # - emby-config:/config
+      - ./data:/config
     restart: always
-
 volumes:
   emby-config:
     driver: local

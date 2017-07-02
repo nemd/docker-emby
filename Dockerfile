@@ -11,7 +11,7 @@ RUN apk --update upgrade \
   ffmpeg \
   imagemagick \
   mono@testing \
-  sqlite \
+  sqlite-libs \
   unzip \
   wget \
  && update-ca-certificates --fresh \
@@ -19,8 +19,10 @@ RUN apk --update upgrade \
 
 # Set Emby Package Information
 ENV PKG_NAME Emby.Mono
-ENV PKG_VER 3.0
-ENV PKG_BUILD 8400
+ARG VER
+ENV PKG_VER ${VER:-3.0}
+ARG BUILD
+ENV PKG_BUILD ${BUILD:-8400}
 ENV APP_BASEURL https://github.com/MediaBrowser/Emby/releases/download/
 ENV APP_PKGNAME ${PKG_VER}.${PKG_BUILD}/${PKG_NAME}.zip
 ENV APP_URL ${APP_BASEURL}/${APP_PKGNAME}
