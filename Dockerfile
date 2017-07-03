@@ -45,7 +45,7 @@ RUN mkdir /config \
  && adduser -u 3001 -SHG tor tor \
  && chown -R tor:tor \
     ${APP_PATH} \
-    "/config"
+ && chown -R tor:tor /config
 
 VOLUME ["/config"]
 
