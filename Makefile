@@ -1,5 +1,5 @@
 build:
-	docker build --force-rm -t emby:$(cmd) .
+	docker build --force-rm -t emby-new:$(cmd) .
 
 shell:
 	sudo docker exec -i -t emby /bin/ash

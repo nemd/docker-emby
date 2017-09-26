@@ -35,7 +35,7 @@ RUN mkdir -p ${APP_PATH} \
  && rm "${APP_PATH}/emby.zip" 
 
 # Link libsqlite3.so library
-#RUN ln -s /usr/lib/libsqlite3.so.0 /usr/lib/libsqlite3.so 
+RUN ln -s /usr/lib/libsqlite3.so.0 /usr/lib/libsqlite3.so 
 # Correct sqlite and imagemagick config
 ADD config/* ${APP_PATH}/
 
